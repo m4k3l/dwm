@@ -1,7 +1,22 @@
 dwm - dynamic window manager
 ============================
 My build of dwm, an extremely fast, small, and dynamic window manager for X.
-See dwm.suckless.org for more info.
+
+Forked from git.suckless.org/dwm.
+
+
+Patches
+-------
+The following patches have been applied:
+
+- colorbar
+- fixborders
+- restartsig
+- scratchpads
+- swallow
+- vanitygaps
+
+See dwm.suckless.org/patches for more info.
 
 
 Requirements
