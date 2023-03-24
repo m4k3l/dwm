@@ -55,10 +55,14 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class	instance    title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ NULL,		"spterm",   NULL,	    SPTAG(0),  1,	   1,           0,        -1 },
-	{ NULL,		"spcalc",   NULL,	    SPTAG(1),  1,	   1,           0,        -1 },
-	{ "St",      	NULL,       NULL,           0,         0,          1,           0,        -1 },
-	{ NULL,      	NULL,       "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ NULL,		 "spterm",   NULL,	    SPTAG(0),  1,	   1,           0,        -1 },
+	{ NULL,		 "spcalc",   NULL,	    SPTAG(1),  1,	   1,           0,        -1 },
+	{ "St",          NULL,       NULL,           0,        0,          1,           0,        -1 },
+	{ NULL,      	 NULL,       "Event Tester", 0,        0,          0,           1,        -1 }, /* xev */
+	{ "firefox", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
+	{ "icecat", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
+	{ "iceweasel", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
+	{ "Surf",    	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
 };
 
 /* layout(s) */
