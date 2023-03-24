@@ -15,17 +15,18 @@ static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static unsigned int baralpha        = 0xd0;
 static unsigned int borderalpha     = OPAQUE;
-static const char col_black[]       = "#1a1b26";
+static const char col_black[]       = "#282a36";
+static const char col_gray[]        = "#44475a";
 static const char col_white[]       = "#f8f8f2";
-static const char col_cyan[]        = "#7aa2f7";
-static const char col_yellow[]      = "#e0af68";
+static const char col_yellow[]      = "#f1fa8c";
+static const char col_purple[]      = "#bd93f9";
 static const char *colors[][3]      = {
 	/*               fg              bg         border   */
 	[SchemeNorm]      = { col_white, col_black, col_black },
-	[SchemeSel]       = { col_white, col_cyan,  col_cyan  },
+	[SchemeSel]       = { col_white, col_black, col_purple  },
 
 	[SchemeStatus]    = { col_yellow, col_black,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]   = { col_white, col_cyan,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]   = { col_black,  col_yellow,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
 	[SchemeTagsNorm]  = { col_white, col_black,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
 	[SchemeInfoSel]   = { col_white, col_black,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
 	[SchemeInfoNorm]  = { col_white, col_black,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
@@ -86,7 +87,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,  "-l", "10", "-nb", col_black, "-nf", col_white, "-sb", col_cyan, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,  "-l", "10", "-nb", col_black, "-nf", col_white, "-sb", col_gray, "-sf", col_white, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
