@@ -91,7 +91,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,  "-l", "10", "-nb", col_black, "-nf", col_white, "-sb", col_gray, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,  "-l", "10", "-nb", col_black, "-nf", col_white, "-sb", col_yellow, "-sf", col_black, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
