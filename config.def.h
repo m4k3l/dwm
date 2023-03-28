@@ -20,6 +20,7 @@ static const char col_gray[]        = "#44475a";
 static const char col_white[]       = "#f8f8f2";
 static const char col_yellow[]      = "#f1fa8c";
 static const char col_purple[]      = "#bd93f9";
+static const char col_pink[]        = "#ff79c6";
 static const char *colors[][3]      = {
 	/*               fg              bg         border   */
 	[SchemeNorm]      = { col_white, col_black, col_black },
@@ -27,9 +28,9 @@ static const char *colors[][3]      = {
 
 	[SchemeStatus]    = { col_yellow, col_black,  "#000000"  }, // Statusbar right {text,background,not used but cannot be empty}
 	[SchemeTagsSel]   = { col_black,  col_yellow,  "#000000"  }, // Tagbar left selected {text,background,not used but cannot be empty}
-	[SchemeTagsNorm]  = { col_white, col_black,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
-	[SchemeInfoSel]   = { col_white, col_black,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
-	[SchemeInfoNorm]  = { col_white, col_black,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
+	[SchemeTagsNorm]  = { col_yellow, col_black,  "#000000"  }, // Tagbar left unselected {text,background,not used but cannot be empty}
+	[SchemeInfoSel]   = { col_pink, col_black,  "#000000"  }, // infobar middle  selected {text,background,not used but cannot be empty}
+	[SchemeInfoNorm]  = { col_pink, col_black,  "#000000"  }, // infobar middle  unselected {text,background,not used but cannot be empty}
 };
 
 typedef struct {
@@ -60,9 +61,12 @@ static const Rule rules[] = {
 	{ "St",          NULL,       NULL,           0,        0,          1,           0,        -1 },
 	{ NULL,      	 NULL,       "Event Tester", 0,        0,          0,           1,        -1 }, /* xev */
 	{ "firefox", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
+	{ "LibreWolf", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
 	{ "icecat", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
 	{ "iceweasel", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
 	{ "Surf",    	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
+	{ "Tor Browser", NULL,       NULL,           1 << 2,   0,          0,           0,        -1 },
+	{ "Signal",      NULL,       NULL,           1 << 7,   0,          0,           0,        -1 },
 };
 
 /* layout(s) */
