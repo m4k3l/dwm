@@ -29,14 +29,14 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
-const char *spcmd3[] = {"st", "-n", "sppulse", "-g", "120x34", "-e", "pulsemixer", NULL };
+const char *spcmd1[] = { "st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
+const char *spcmd2[] = { "st", "-n", "sppulse", "-g", "120x34", "-e", "pulsemixer", NULL };
+const char *spcmd3[] = { "st", "-n", "spfm", "-g", "120x34", "-e", "ranger", NULL };
 static Sp scratchpads[] = {
 	/* name        cmd  */
-	{"spterm",     spcmd1},
-	{"spcalc",     spcmd2},
-	{"sppulse",    spcmd3},
+	{ "spcalc",    spcmd1 },
+	{ "sppulse",   spcmd2 },
+	{ "spfm",      spcmd3 },
 };
 
 /* tagging */
@@ -47,18 +47,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class	instance    title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ NULL,		 "spterm",   NULL,	    SPTAG(0),  1,	   1,           0,        -1 },
-	{ NULL,		 "spcalc",   NULL,	    SPTAG(1),  1,	   1,           0,        -1 },
-	{ "St",          NULL,       NULL,           0,        0,          1,           0,        -1 },
-	{ NULL,      	 NULL,       "Event Tester", 0,        0,          0,           1,        -1 }, /* xev */
-	{ "firefox", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
-	{ "LibreWolf", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
-	{ "icecat", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
-	{ "iceweasel", 	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
-	{ "Surf",    	 NULL,       NULL,           1 << 1,   0,          0,           0,        -1 },
-	{ "Tor Browser", NULL,       NULL,           1 << 2,   0,          0,           0,        -1 },
-	{ "Signal",      NULL,       NULL,           1 << 7,   0,          0,           0,        -1 },
+	/* class	   instance    title           tags mask isfloating  isterminal  noswallow  monitor */
+	{ NULL,		   "spcalc",   NULL,	       SPTAG(0), 1,	      1,           0,        -1 },
+	{ NULL,		   "sppulse",  NULL,	       SPTAG(1), 1,	      1,           0,        -1 },
+	{ NULL,		   "spfm",     NULL,	       SPTAG(2), 1,	      1,           0,        -1 },
+	{ "St",            NULL,       NULL,           0,        0,           1,           0,        -1 },
+	{ NULL,      	   NULL,       "Event Tester", 0,        0,           0,           1,        -1 }, /* xev */
+	{ "Google-chrome", NULL,       NULL,           1 << 1,   0,           0,           0,        -1 },
+	{ "Tor Browser",   NULL,       NULL,           1 << 2,   0,           0,           0,        -1 },
+	{ "Signal",        NULL,       NULL,           1 << 7,   0,           0,           0,        -1 },
 };
 
 /* layout(s) */
@@ -97,9 +94,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.ui = 0 } },
-	{ MODKEY,            		XK_grave,  togglescratch,  {.ui = 1 } },
-	{ MODKEY|ShiftMask,             XK_grave,  togglescratch,  {.ui = 2 } },
+	{ MODKEY,            		XK_grave,  togglescratch,  {.ui = 0 } },
+	{ MODKEY|ShiftMask,             XK_grave,  togglescratch,  {.ui = 1 } },
+	{ MODKEY,			XK_r,      togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
