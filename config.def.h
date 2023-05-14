@@ -32,11 +32,15 @@ typedef struct {
 const char *spcmd1[] = { "st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
 const char *spcmd2[] = { "st", "-n", "sppulse", "-g", "120x34", "-e", "pulsemixer", NULL };
 const char *spcmd3[] = { "st", "-n", "spfm", "-g", "120x34", "-e", "ranger", NULL };
+const char *spcmd4[] = { "st", "-n", "spmpc", "-g", "120x34", "-e", "ncmpcpp", NULL };
+const char *spcmd5[] = { "st", "-n", "spterm", "-g", "120x34", NULL };
 static Sp scratchpads[] = {
 	/* name        cmd  */
 	{ "spcalc",    spcmd1 },
 	{ "sppulse",   spcmd2 },
 	{ "spfm",      spcmd3 },
+	{ "spmpc",     spcmd4 },
+	{ "spterm",    spcmd5 },
 };
 
 /* tagging */
@@ -51,6 +55,8 @@ static const Rule rules[] = {
 	{ NULL,		   "spcalc",   NULL,	       SPTAG(0), 1,	      1,           0,        -1 },
 	{ NULL,		   "sppulse",  NULL,	       SPTAG(1), 1,	      1,           0,        -1 },
 	{ NULL,		   "spfm",     NULL,	       SPTAG(2), 1,	      1,           0,        -1 },
+	{ NULL,		   "spmpc",    NULL,	       SPTAG(3), 1,	      1,           0,        -1 },
+	{ NULL,		   "spterm",   NULL,	       SPTAG(4), 1,	      1,           0,        -1 },
 	{ "St",            NULL,       NULL,           0,        0,           1,           0,        -1 },
 	{ NULL,      	   NULL,       "Event Tester", 0,        0,           0,           1,        -1 }, /* xev */
 	{ "Google-chrome", NULL,       NULL,           1 << 1,   0,           0,           0,        -1 },
@@ -94,9 +100,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return, togglescratch,  {.ui = 4 } },
 	{ MODKEY,            		XK_grave,  togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask,             XK_grave,  togglescratch,  {.ui = 1 } },
 	{ MODKEY,			XK_r,      togglescratch,  {.ui = 2 } },
+	{ MODKEY,			XK_n,      togglescratch,  {.ui = 3 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
