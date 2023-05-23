@@ -12,7 +12,7 @@ The following patches have been applied:
 - [swallow](https://dwm.suckless.org/patches/swallow)
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps)
 - [hidevacanttags](https://dwm.suckless.org/patches/hidevacanttags)
--
+- [status2d-systray](https://dwm.suckless.org/patches/status2d)
 
 ## Requirements
 In order to build dwm you need the Xlib header files.
