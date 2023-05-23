@@ -7,13 +7,12 @@ Forked from [suckless](https://git.suckless.org/dwm).
 ## Patches
 The following patches have been applied:
 
-- [status2d](https://dwm.suckless.org/patches/status2d)
 - [restartsig](https://dwm.suckless.org/patches/restartsig)
 - [scratchpads](https://dwm.suckless.org/patches/scratchpads)
 - [swallow](https://dwm.suckless.org/patches/swallow)
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps)
 - [hidevacanttags](https://dwm.suckless.org/patches/hidevacanttags)
-
+-
 
 ## Requirements
 In order to build dwm you need the Xlib header files.
