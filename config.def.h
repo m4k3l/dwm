@@ -18,12 +18,12 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10", "JetBrainsMono Nerd Font:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char norm_fg[]         = "#0abdc6";
-static const char norm_bg[]         = "#091833";
-static const char norm_border[]     = "#091833";
-static const char sel_fg[]          = "#ea00d9";
-static const char sel_bg[]          = "#321959";
-static const char sel_border[]      = "#ea00d9";
+static const char norm_fg[]         = "#bbbbbb";
+static const char norm_bg[]         = "#222222";
+static const char norm_border[]     = "#444444";
+static const char sel_fg[]          = "#eeeeee";
+static const char sel_bg[]          = "#005577";
+static const char sel_border[]      = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { norm_fg, norm_bg, norm_border },
